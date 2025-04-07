@@ -23,6 +23,10 @@ app.use(methodOverride("_method"));
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
 
+const authController = require("./controllers/auth.js");
+  
+app.use("/auth", authController);
+
 
 app.get("/", async (req, res) => {
     res.render("index.ejs");
